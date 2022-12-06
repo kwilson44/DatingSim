@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Mendenhall {
 int points = 0;
 boolean active = false;
