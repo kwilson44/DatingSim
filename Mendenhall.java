@@ -1,3 +1,5 @@
+
+/*
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -11,10 +13,10 @@ String potentialDirections[]={"N1","N2","E1","E2","S1","S2","W1","W2"};
 ArrayList<String> inventory = new ArrayList<String>();     
 Scanner myObj = new Scanner(System.in);
     public int MendenhallIntro(int points) {
-      
-    }
+      points return
+        }
 
-}
+
 public static void main(String[] args) {
    Mendenhall player = new Mendenhall();
    // player.MendenhallIntro(0);
@@ -27,3 +29,5 @@ public static void main(String[] args) {
    // player.westOne();
   //  player.westTwo();
 }
+}
+*/

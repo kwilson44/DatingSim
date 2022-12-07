@@ -3,7 +3,7 @@ public class PlayerEnding {
 
   static void GamerMethodFinal() {
   }
-}
+
 
  public static void main(final String[] args) {
       GamerMethodFinal();
@@ -12,3 +12,4 @@ public class PlayerEnding {
 
   
   }
+}
