@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class CampusCenter {
   public boolean active = false;
   public String direction;
   public Integer position;
 
-  public CampusCenter() {
+  public CampusCenter(ArrayList<String> inventory, int points) {
     
   }
 

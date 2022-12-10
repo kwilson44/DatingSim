@@ -110,8 +110,6 @@ public class PlayerIntro {
       GamerMethod();
 
       System.out.println("Excellent, you're ready to begin 🎮 !");
-
-  
   }
 
 }

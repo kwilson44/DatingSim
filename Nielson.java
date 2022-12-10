@@ -2,7 +2,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class theNielson {
+public class Nielson {
 int points = 0;
 boolean active = false;
 String direction;
@@ -12,14 +12,14 @@ String potentialDirections[]={"N1","N2","E1","E2","S1","S2","W1","W2"};
 ArrayList<String> inventory = new ArrayList<String>();     
 Scanner myObj = new Scanner(System.in);
    
-  public int theNielsonIntro(int points) {
+  public int NielsonIntro(int points) {
       
   }
 
 
 public static void main(String[] args) {
-   theNielson player = new theNielson();
-   // player.theNielsonIntro(0);
+   theNielson player = new Nielson();
+   // player.NielsonIntro(0);
    // player.northOne();
    // player.northTwo();
    // player.eastOne();
