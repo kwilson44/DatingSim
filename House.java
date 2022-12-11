@@ -13,23 +13,15 @@ public class House extends PlayerIntro {
     // String directionInputTwo = "";
     String startingPointInput = "";
     boolean roommateFriendship;
+    // ArrayList<String> potentialDirections = new ArrayList<String>();
 
 
-    // Directions and S for starting point
-    String potentialDirections[] = {
-        "N1",
-        "N2",
-        "E1",
-        "E2",
-        "S1",
-        "S2",
-        "W1",
-        "W2",
-        "SP"
-    };
-  
+
+    //note for future katie, add N1 or E2 whenever a method is called and if it is do contains and then
+    //print a message telling the player they've already done this
+
     ArrayList<String> inventory = new ArrayList<String>();
-  
+
     Scanner myObj = new Scanner(System.in);
 
     public int HouseIntro(int points) {
@@ -63,7 +55,7 @@ public class House extends PlayerIntro {
     public void northOne() {
         points += 1;
         active = true;
-        // direction = potentialDirections[0];
+        // potentialDirections.add("N1");
 
         System.out.println("You walk upstairs and head into your dorm. There to meet you is your roommate(There's a 50/50 chance things will go well).*** +1 POINT *** \n");
 
@@ -96,7 +88,6 @@ public class House extends PlayerIntro {
 
             inventory.add("Smith Cookie");
             points += 5;
-            System.out.println(inventory);
         }
 
         if (roommateFriendship == false) {
@@ -111,7 +102,7 @@ public class House extends PlayerIntro {
 
         points += 1;
         active = true;
-        // direction = potentialDirections[1];
+        //potentialDirections.add("N2");
 
         System.out.println("*** +1 POINT *** You walk further into your dorm and start unpacking. On your desk you see an old photo of Smithies from the 1800s doing a play. One Smithie is dressed in a gown and another is as a monster. That's werid... Should you take it? (Y/N) \n");
         String deskYN = myObj.nextLine();
@@ -133,7 +124,7 @@ public class House extends PlayerIntro {
 
         points += 1;
         active = true;
-        //direction = potentialDirections[2];
+        //potentialDirections.add("E1");
 
         System.out.println("You enter the kitchette and see two Smithies making Peanut Butter Cookies and vibing 'Oh golly' you think to yourself 'I better introduce myself a make some friends' What do you open with? \n **Bust it down (type 'B')** \n **Just introduce yourself (type 'I')** \n **Make Fun of your rival house (type M)** \n");
         String eastActionInput = myObj.nextLine();
@@ -171,8 +162,9 @@ public class House extends PlayerIntro {
     public void eastTwo() {
         points += 1;
         active = true;
+        //potentialDirections.add("E2");
 
-      System.out.println("You go further east and end up in the laundry room. There isn't much to see besides washing machines going and a free bin. 'hmmmm' you wonder to yourself 'there's not much to do' Do you wanna look around? (Y/N)  \n");
+        System.out.println("You go further east and end up in the laundry room. There isn't much to see besides washing machines going and a free bin. 'hmmmm' you wonder to yourself 'there's not much to do' Do you wanna look around? (Y/N)  \n");
         String eastActionInputThree = myObj.nextLine();
         if (eastActionInputThree.equals("Y")) {
             System.out.println("Cool! You see a picture of \n *** Mendenhall *** \n *** Campus Center *** \n *** The Nielson *** \n It's always good to be curious and look at your surroundings *** +5 POINTS *** \n Let's go back now");
@@ -183,19 +175,23 @@ public class House extends PlayerIntro {
     }
 
     public void southOne() {
+        //potentialDirections.add("S1");
         System.out.println("South One");
     }
-
+//this is not very need, it's basically the starting point
     public void southTwo() {
+        // potentialDirections.add("S2");
         System.out.println("South Two");
     }
 
 
     public void westOne() {
+        // potentialDirections.add("W1");
         System.out.println("You enter the lounging area with a few Smithies studying and doing their own thing. 'Oh boy' you think to yourself 'I better not bother them, they look busy'. Do you wanna go further west or back to the foyer? (W/S)\n");
     }
 
     public void westTwo() {
+        // potentialDirections.add("W2");
         System.out.println("Immediately, in the corner of this room, you see a book of Greek Myths with a page hanging out. You go to pick it up but then someone's hand swopes in and takes it. \n 'Hey, I'm crush name[index], I live on the 4th floor.' You notice that they're wearing a shirt for Newsies... they must be a theatre kid. WHAT DO YOU DO??? \n \n **They kind of cute??? (type 'F') for... you know... flirt :D** \n **Start shrieking (type 'S')** \n ** Ask about the book (type B)** \n ");
         String westActionInputOne = myObj.nextLine();
         if (westActionInputOne.equals("F")) {
@@ -211,88 +207,111 @@ public class House extends PlayerIntro {
             System.out.println("You just stare blankly at them and crush name[index] hisses at you and walks off as if you've been marked. Nice going! *** -15 POINTS *** \n");
             points -= 15;
         }
+        System.out.println("'Well, that was nice and totally not important' you think to yourself as they walk away");
     }
 
     public void startingPoint() {
         System.out.println("\n You're back in the -INSERT HOUSE- entrance. Where do you wanna go?\n To your dorm? (N) \n To the kitchenette? (E) \n Outside? (S) \n or the lounging area (W) \n");
-        startingPointInput = myObj.nextLine();
     }
 
     public static void main(String[] args) {
+        ArrayList<String> potentialDirections = new ArrayList<String>();
+
         Scanner myObj = new Scanner(System.in);
         House player = new House();
         player.HouseIntro(0);
         //first n,e,s,w choice
         String directionInputOne = myObj.nextLine();
         String directionInputTwo = "";
+        String directionInputThree = "";
         String startingPointInput = "";
 
+
         switch (directionInputOne) {
-            case "N":
-                player.northOne();
-                directionInputTwo = myObj.nextLine();
-                if (directionInputOne.equals("N") && directionInputTwo.equals("N")) {
-                    player.northTwo();
-                }
-                break;
+        case "N":
+            player.northOne();
+            potentialDirections.add("N1");
+            directionInputTwo = myObj.nextLine();
+            if (directionInputOne.equals("N") && directionInputTwo.equals("N")) {
+                player.northTwo();
+                potentialDirections.add("N2");
+
+            }
+            break;
 
 
-            case "E":
-                player.eastOne();
-                directionInputTwo = myObj.nextLine();
-                if (directionInputOne.equals("E") && directionInputTwo.equals("E")) 
-                {
-                  System.out.println("now escuting east 2");
-                    player.eastTwo();
-                }
-                break;
+        case "E":
+            player.eastOne();
+            potentialDirections.add("E1");
+            directionInputTwo = myObj.nextLine();
+            if (directionInputOne.equals("E") && directionInputTwo.equals("E")) {
+                System.out.println("now escuting east 2");
+                player.eastTwo();
+                potentialDirections.add("E2");
 
-            case "S":
-                player.southOne();
-                directionInputTwo = myObj.nextLine();
-                if (directionInputOne.equals("S") && directionInputTwo.equals("S")) {
-                    player.southTwo();
-                }
-                break;
+            }
+            break;
 
-            case "W":
-                player.westOne();
-                directionInputTwo = myObj.nextLine();
-                if (directionInputOne.equals("W") && directionInputTwo.equals("W")) {
-                    player.westTwo();
-                }
-                break;
+        case "S":
+            player.southOne();
+            potentialDirections.add("S1");
+            directionInputTwo = myObj.nextLine();
+            if (directionInputOne.equals("S") && directionInputTwo.equals("S")) {
+                player.southTwo();
+                potentialDirections.add("S2");
+
+            }
+            break;
+
+        case "W":
+            player.westOne();
+            potentialDirections.add("W1");
+            directionInputTwo = myObj.nextLine();
+            if (directionInputOne.equals("W") && directionInputTwo.equals("W")) {
+                player.westTwo();
+                potentialDirections.add("W2");
+            } else if (directionInputOne.equals("W") && directionInputTwo.equals("S")) {
+                player.startingPoint();
+                startingPointInput = myObj.nextLine();
+            } else {
+                System.out.println("That's not an option hehehehheh try again :D");
+                startingPointInput = myObj.nextLine();
+            }
+
+            break;
         }
 
 
+/* 
+            } else if (startingPointInput.equals("W")) {
+
+                if (directionInputOne.equals("W") == false) {
+                    player.westOne();
+                } else if (potentialDirections.contains("W1")) {
+                    System.out.println("There's not much to see in this room. You should go back to the foyer \n");
+                    player.startingPoint();
+                }
+
+        */
+        
+        
         switch (directionInputTwo) {
 
             case "S":
+            player.startingPoint();
+            startingPointInput = myObj.nextLine();
+          
+            break;
+
+        case "N":
+            if (directionInputOne.equals("N") == false) {
+                player.northOne();
+            } else {
+                System.out.println("There's not much to see in your dorm. You should go back to the foyer \n");
                 player.startingPoint();
                 startingPointInput = myObj.nextLine();
-              if (startingPointInput.equals("S")) {
-                    player.southOne();
-                } else if (startingPointInput.equals("N")) {
-                    player.northOne();
-                } else if (startingPointInput.equals("W")) {
-                    player.westOne();
-                } else if (startingPointInput.equals("E")) {
-                    player.eastOne();
-                } else {
-                    System.out.println("That's not an option hehehehheh try again :D");
-                    startingPointInput = myObj.nextLine();
-              }
-                break;
 
-            case "N":
-                if (directionInputOne.equals("N") == false) {
-                    player.northOne();
-                } else {
-                    System.out.println("There's not much to see in your dorm. You should go back to the foyer \n");
-                    player.startingPoint();
-                    startingPointInput = myObj.nextLine();
-                  
-                  if (startingPointInput.equals("S")) {
+                if (startingPointInput.equals("S")) {
                     player.southOne();
                 } else if (startingPointInput.equals("N")) {
                     player.northOne();
@@ -304,19 +323,19 @@ public class House extends PlayerIntro {
                     System.out.println("That's not an option hehehehheh try again :D");
                     startingPointInput = myObj.nextLine();
                 }
-                  }
-                break;
-        
-      
-            case "E":
-                if (directionInputOne.equals("E") == false) {
-                    player.eastOne();
-                } else {
-                    System.out.println("There's not much to see in the kitchen. You should go back to the foyer \n");
-                    player.startingPoint();
+            }
+            break;
+
+
+        case "E":
+            if (directionInputOne.equals("E") == false) {
+                player.eastOne();
+            } else {
+                System.out.println("There's not much to see in the kitchen. You should go back to the foyer \n");
+                player.startingPoint();
                 startingPointInput = myObj.nextLine();
 
-                  if (startingPointInput.equals("S")) {
+                if (startingPointInput.equals("S")) {
                     player.southOne();
                 } else if (startingPointInput.equals("N")) {
                     player.northOne();
@@ -331,38 +350,80 @@ public class House extends PlayerIntro {
                 }
             }
 
-            case "W":
-                if (directionInputOne.equals("W") == false) {
-                    player.westOne();
-                } else {
-                    System.out.println("There's not much to see in this room. You should go back to the foyer \n");
-                    player.startingPoint();
-                 startingPointInput = myObj.nextLine();
-                if (startingPointInput.equals("S")) {
-                    player.southOne();
-                } else if (startingPointInput.equals("N")) {
-                    player.northOne();
-                } else if (startingPointInput.equals("W")) {
-                    player.westOne();
-                } else if (startingPointInput.equals("E")) {
-                    player.eastOne();
-                } else {
-                    System.out.println("That's not an option hehehehheh try again :D");
-                    startingPointInput = myObj.nextLine();
+        case "W":
+            if (directionInputOne.equals("W") == false) {
+                player.westOne();
+            } else if (potentialDirections.contains("W1")) {
+                System.out.println("There's not much to see in this room. You should go back to the foyer \n");
+                player.startingPoint();
+            }
+            startingPointInput = myObj.nextLine();
+            if (startingPointInput.equals("S")) {
+                player.southOne();
+            } else if (startingPointInput.equals("N")) {
+                player.northOne();
+            } else if (startingPointInput.equals("E")) {
+                player.eastOne();
+            } else {
+                System.out.println("That's not an option hehehehheh try again :D");
+                startingPointInput = myObj.nextLine();
+            }
 
-                }
-                    break;
-                }
+
+        break;
+    }
+    
+    switch (startingPointInput) {
+             case "S":
+    
+        if (startingPointInput.equals("S")) {
+            if (potentialDirections.contains("S1") && potentialDirections.contains("S2"))
+            System.out.println("You should focus on unexplored areas of the house... I'll take you back to the foyer");
         }
+
+            case "N":
+            if (startingPointInput.equals("N")) {
+
+            if (potentialDirections.contains("N1") && potentialDirections.contains("N2"))
+            System.out.println("You should focus on unexplored areas of the house... I'll take you back to the foyer");
+        
+            }
+            case "E":
+            if (startingPointInput.equals("E")) {
+
+            if (potentialDirections.contains("E1") && potentialDirections.contains("E2"))
+            System.out.println("You should focus on unexplored areas of the house... I'll take you back to the foyer");
+            }
+
+            case "W":
+            if (startingPointInput.equals("W")) {
+
+            if (potentialDirections.contains("W1") && potentialDirections.contains("W2"))
+            System.out.println("You should focus on unexplored areas of the house... I'll take you back to the foyer");
+            }
+
+       default:
+
+       System.out.println("HERE ARE WHERE THINGS END");
+            System.out.println("That's not an option hehehehheh try again :D");
+            startingPointInput = myObj.nextLine();
+            break;
+
+            }
         }
     }
-  
 
-       
-    //note, returning to foyer works but going in a different direction after that doesn't
 
-  //note to self, put all the gross if/else statements in a method and then extend it so it looks less gross. Also be sure to name the methods the same thing
+
+
+
+
+//note, returning to foyer works but going in a different direction after that doesn't
+
 //to run the code type javac House.java, ls,  java House
 //secret ending minatour
 
 //Extend TA  //
+
+//Note, the player can go in the same direction twice successfully, return back to the foyer, and go to a new
+//direction but then when they try to go further into the new direction the code crashes.
