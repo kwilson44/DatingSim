@@ -8,9 +8,23 @@ public class GameLoop {
   
     public static void main(String[] args) {
 
+// from house.java
+ //ArrayList<String> potentialDirections = new ArrayList<String>();
+    Scanner myObj = new Scanner(System.in);
+        //first n,e,s,w choice
+        
+        String directionInputOne = "";
+        String directionInputTwo = "";
+        //String directionInputThree = "";
+        String startingPointInput = "";
+        //Clarify with gamePoints
+
+
+
+
         // This is a "flag" to let us know when the loop should end
         boolean stillPlaying = true;
-
+        String playerHouse ="";
         // We'll use this to get input from the user.
         Scanner userInput = new Scanner(System.in);
 
@@ -22,11 +36,8 @@ public class GameLoop {
         System.out.println("SMITH COLLEGE DATING SIMULATOR");
         System.out.println("********************************");
 
-        // Instructions are sometimes helpful
-        System.out.println("Enter WIN to win, LOSE to lose, anything else to continue playing.");
-
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
-        do {
+       // do { //COME BACK AND ADD DO WHILE KATIE AND ERIN KRIN
             // ************************************************
             // The stuff that happens in your game will go here
             //  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
@@ -49,7 +60,6 @@ public class GameLoop {
                                             "PARK ANNEX","PARSONS ANNEX","TENNEY HOUSE"
                                            };
       
-        final Scanner myObj = new Scanner(System.in);
 
         System.out.println("Hi! my name Sophia Smith and I'm going to help you find love... or confess to your crush. What's your name?");
         final String InputName = myObj.nextLine();
@@ -61,7 +71,7 @@ public class GameLoop {
             double index = (int)(Math.random()*(((gardenNeighborhood.length-1)-0)+1))+0;
             //for the randomization of houses
             int houseIndex = (int) index;
-           String playerHouse = gardenNeighborhood[houseIndex];
+            playerHouse = gardenNeighborhood[houseIndex];
             System.out.println("Great! Welcome to " + playerHouse);
 
 
@@ -69,7 +79,7 @@ public class GameLoop {
             double index = (int)(Math.random()*(((ivyNeighborhood.length-1)-0)+1))+0;
             //for the randomization of houses
             int houseIndex = (int) index;
-           String playerHouse = ivyNeighborhood[houseIndex];
+            playerHouse = ivyNeighborhood[houseIndex];
             System.out.println("Great! Welcome to " + playerHouse);
 
 
@@ -77,7 +87,7 @@ public class GameLoop {
             double index = (int)(Math.random()*(((mountainNeighborhood.length-1)-0)+1))+0;
             //for the randomization of houses
             int houseIndex = (int) index;
-            String playerHouse = mountainNeighborhood[houseIndex];
+             playerHouse = mountainNeighborhood[houseIndex];
             System.out.println("Great! Welcome to " + playerHouse);
 
 
@@ -85,19 +95,19 @@ public class GameLoop {
             double index = (int)(Math.random()*(((paradiseNeighborhood.length-1)-0)+1))+0;
             //for the randomization of houses
             int houseIndex = (int) index;
-            String playerHouse = paradiseNeighborhood[houseIndex];
+             playerHouse = paradiseNeighborhood[houseIndex];
             System.out.println("Great! Welcome to " + playerHouse);
 
         } else if(userInputNeighborhood.equals("E")) {
             double index = (int)(Math.random()*(((specialInterestHousing.length-1)-0)+1))+0;
             //for the randomization of houses
             int houseIndex = (int) index;
-            String playerHouse = specialInterestHousing[houseIndex];
+             playerHouse = specialInterestHousing[houseIndex];
             System.out.println("Great! Welcome to " + playerHouse);
 
         } else {
             System.out.println("That wasn't an option... You know what? You had your chance, we're putting you in Sessions, have fun with the ghosts.");
-         String playerHouse = "SESSIONS HOUSE";
+          playerHouse = "SESSIONS HOUSE";
 
         }        
 
@@ -107,30 +117,26 @@ public class GameLoop {
 
       if (userInputClassYear == 2026 || userInputClassYear == 2025 || userInputClassYear== 2024 || userInputClassYear == 2023) {
 
-        //characterization.add(userInputClassYear);
         } else {
         System.out.println("Try again! *hint* *hint* 2026,2025,2024,2023");
         userInputClassYear = myObj.nextInt();
+        }
+
+        
 
             Player currentUser = new Player(InputName, userInputClassYear, playerHouse);
-
+            House userHouse = new House();
               // Execute the beginning of the game by calling the House Intro, starting the player
               // at the initial location of their House.
-            House userHouse = new House();
-            userHouse.HouseIntro(0);
-            
-            System.out.println("You are still playing. Follow the instructions to continue.");
-            userResponse = userInput.nextLine().toUpperCase();
+              System.out.println(currentUser.name + " walks in to " + currentUser.userHouse + " 'Wowza!' You say in disbelief as you walk around and look at your potential home for the next 4 years. There's a wide array of Smithies buzzing and getting ready for classes. All of a sudden, a similar looking women appears: \n Hey, it's me, Sophia Smith again, I just wanted to tell you you can explore Smith's Campus by going N, E, S, W, there are limitations of course but you should look around, you could meet someone you fancy. You can also add things you find to your inventory by typing 'add' and the object you want. Also, you can impress your crush by talking with them or giving gifts you find. One last thing, while you can have multiple crushes, choosing one main one might make winning them over easier. One last thing, there is an element of time in this too. Choose your location wisely. Okay, good luck kid :D \n");
 
-            // ***********************************************************************
-            // And as the player interacts, you'll check to see if the game should end
-            //  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
-            if (userResponse.equals("WIN") || userResponse.equals("LOSE")) {
-                stillPlaying = false;
-            } while (stillPlaying); {
+              
+
+              System.out.println("With that, it's time for adventure... and love??? A bit overwhemled, you look at everything that beholds you. To the east (E) you can smell some ramen and hear a Smithie bitterly complaining about the food at Smith and further east the thudding of washing machines. To the west (W) you can see and lounging area and Smithies Studying. South (S) of you is the exit and North (N) is the staircase that leds to your room. Where do you go?(Type N,E,S,or W) \n");
+            userHouse.methodCaller();
 
         // Tidy up
-        userInput.close();
+      //  userInput.close();
 
         // Once you exit the loop, you may need to deal with various possible stopping conditions
         if (userResponse.equals("WIN")) {
@@ -138,8 +144,11 @@ public class GameLoop {
         } else { // userResponse.equals("LOSE")
             System.out.println("GAME OVER. Better luck next time.");
         }
-            }
-      }
-        }
-  
+    }       
+
+    }
+
+
+
+
       
