@@ -8,9 +8,6 @@ public class House extends PlayerIntro {
     boolean active = false;
     String direction;
     int position;
-    // String directionInputOne = "";
-    // String directionInputTwo = "";
-    String startingPointInput = "";
     boolean roommateFriendship;
     // ArrayList<String> potentialDirections = new ArrayList<String>();
 
@@ -155,19 +152,19 @@ public class House extends PlayerIntro {
 
     public void westTwo() {
         // potentialDirections.add("W2");
-        System.out.println("Immediately, in the corner of this room, you see a book of Greek Myths with a page hanging out. You go to pick it up but then someone's hand swopes in and takes it. \n 'Hey, I'm crush name[index], I live on the 4th floor.' You notice that they're wearing a shirt for Newsies... they must be a theatre kid. WHAT DO YOU DO??? \n \n **They kind of cute??? (type 'F') for... you know... flirt :D** \n **Start shrieking (type 'S')** \n ** Ask about the book (type B)** \n ");
+        System.out.println("Immediately, in the corner of this room, you see a book of Greek Myths with a page hanging out. You go to pick it up but then someone's hand swopes in and takes it. \n 'Hey, I'm Alex (they/them), I live on the 4th floor.' You notice that they're wearing a shirt for Newsies... they must be a theatre kid. WHAT DO YOU DO??? \n \n **They kind of cute? Flirt???(type 'F')** \n **Start shrieking (type 'S')** \n ** Ask about the book (type B)** \n ");
         String westActionInputOne = myObj.nextLine();
         if (westActionInputOne.equals("F")) {
             System.out.println("EW! That's house incest, which is never a good idea. HOUSE BOOTY = BAD BOOTY *** -10 POINTS *** \n");
             points -= 10;
         } else if (westActionInputOne.equals("S")) {
-            System.out.println("You're screaming disorients them and you can get a better look at the book but at what cost??? *** -5 POINTS ***  \n");
+            System.out.println("Your screaming disorients them and you can get a better look at the book but at what cost??? *** -5 POINTS ***  \n");
             points -= 5;
         } else if (westActionInputOne.equals("B")) {
-            System.out.println("'Oh, that's a book I found from Josten. Me and some of my  friends are putting on a play about King Minos of Crete.'crush name[index] says to you. *** +10 POINTS *** \n");
+            System.out.println("'Oh, that's a book I found from Josten. Me and some of my  friends are putting on a play about King Minos of Crete.'Alex says to you. *** +10 POINTS *** \n");
             points += 10;
         } else {
-            System.out.println("You just stare blankly at them and crush name[index] hisses at you and walks off as if you've been marked. Nice going! *** -15 POINTS *** \n");
+            System.out.println("You just stare blankly at them and Alex hisses at you and walks off as if you've been marked. Nice going! *** -15 POINTS *** \n");
             points -= 15;
         }
         System.out.println("'Well, that was nice and totally not important' you think to yourself as they walk away");
@@ -190,8 +187,7 @@ public class House extends PlayerIntro {
         House player = new House();
         String directionInputOne = myObj.nextLine();
         String directionInputTwo = "";
-        String directionInputThree = "";
-        String startingPointInput = "";
+
 
 
         switch (directionInputOne) {
@@ -205,7 +201,6 @@ public class House extends PlayerIntro {
 
             } else if (directionInputOne.equals("N") && directionInputTwo.equals("S")){
                 player.startingPoint();
-                startingPointInput = myObj.nextLine();
                 }
             break;
 
@@ -220,23 +215,21 @@ public class House extends PlayerIntro {
 
             } else if (directionInputOne.equals("E") && directionInputTwo.equals("S")){
                 player.startingPoint();
-                startingPointInput = myObj.nextLine();
                 }
             break;
 
 
 
         case "W":
-        player.eastOne();
+        player.westOne();
         potentialDirections.add("W1");
         directionInputTwo = myObj.nextLine();
         if (directionInputOne.equals("W") && directionInputTwo.equals("W")) {
-            player.eastTwo();
+            player.westTwo();
             potentialDirections.add("W2");
 
         } else if (directionInputOne.equals("W") && directionInputTwo.equals("S")){
             player.startingPoint();
-            startingPointInput = myObj.nextLine();
             }
         break;
 
@@ -251,7 +244,6 @@ public class House extends PlayerIntro {
 
             } else if (directionInputOne.equals("N") && directionInputTwo.equals("S")){
                 player.startingPoint();
-                startingPointInput = myObj.nextLine();
                 }
         break;
         }
@@ -272,7 +264,6 @@ public class House extends PlayerIntro {
             } else {
                 System.out.println("There's not much to see in your dorm. You should go back to the foyer \n");
                 player.startingPoint();
-                startingPointInput = myObj.nextLine();
 
             
                 break;
@@ -285,7 +276,6 @@ public class House extends PlayerIntro {
             } else {
                 System.out.println("There's not much to see in the kitchen. You should go back to the foyer \n");
                 player.startingPoint();
-                startingPointInput = myObj.nextLine();
 
             
                 break;
@@ -298,7 +288,6 @@ public class House extends PlayerIntro {
                 System.out.println("There's not much to see in this room. You should go back to the foyer \n");
                 player.startingPoint();
             }
-            startingPointInput = myObj.nextLine();
         
 
 

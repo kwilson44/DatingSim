@@ -64,7 +64,7 @@ public class GameLoop {
         System.out.println("Hi! my name Sophia Smith and I'm going to help you find love... or confess to your crush. What's your name?");
         final String InputName = myObj.nextLine();
 
-        System.out.println("Well, it's nice to meet you " + InputName + "! Let's begin. What neighborhood do you wanna live in? Enter 'A' for Garden Neighborhood, 'B' for Ivy Neighborhood, 'C' for Mountain Neighborhood, 'D' for Paradise Neighborhood and 'E' for Special Interest Housing: ");
+        System.out.println("Well, it's nice to meet you " + InputName + "! Let's begin. What neighborhood do you wanna live in? \n Enter 'A' for Garden Neighborhood, \n 'B' for Ivy Neighborhood, \n 'C' for Mountain Neighborhood, \n 'D' for Paradise Neighborhood \n 'E' for Special Interest Housing: ");
         String userInputNeighborhood = myObj.nextLine();
 
         if(userInputNeighborhood.equals("A")) {
@@ -126,17 +126,20 @@ public class GameLoop {
 
             Player currentUser = new Player(InputName, userInputClassYear, playerHouse);
             House userHouse = new House();
+            Fordhall userFordhall = new Fordhall();
               // Execute the beginning of the game by calling the House Intro, starting the player
               // at the initial location of their House.
-              System.out.println(currentUser.name + " walks in to " + currentUser.userHouse + " 'Wowza!' You say in disbelief as you walk around and look at your potential home for the next 4 years. There's a wide array of Smithies buzzing and getting ready for classes. All of a sudden, a similar looking women appears: \n Hey, it's me, Sophia Smith again, I just wanted to tell you you can explore Smith's Campus by going N, E, S, W, there are limitations of course but you should look around, you could meet someone you fancy. You can also add things you find to your inventory by typing 'add' and the object you want. Also, you can impress your crush by talking with them or giving gifts you find. One last thing, while you can have multiple crushes, choosing one main one might make winning them over easier. One last thing, there is an element of time in this too. Choose your location wisely. Okay, good luck kid :D \n");
+              System.out.println(currentUser.name + " walks in to " + currentUser.userHouse + " 'Wowza!' You say in disbelief as you walk around and look at your potential home for the next 4 years. There's a wide array of Smithies buzzing and getting ready for classes. All of a sudden, a similar looking women appears: \n Hey, it's me, Sophia Smith again, I just wanted to tell you you can explore Smith's Campus by going N(orth), E(ast), W(est), there are limitations so pick wisely. \n Also, you can impress your crush by talking with them or giving gifts you find. \n Okay, good luck kid :D \n");
 
               
 
-              System.out.println("With that, it's time for adventure... and love??? A bit overwhemled, you look at everything that beholds you. To the east (E) you can smell some ramen and hear a Smithie bitterly complaining about the food at Smith and further east the thudding of washing machines. To the west (W) you can see and lounging area and Smithies Studying. South (S) of you is the exit and North (N) is the staircase that leds to your room. Where do you go?(Type N,E,S,or W) \n");
-            userHouse.methodCaller();
+              System.out.println("With that, it's time for adventure... and love??? A bit overwhemled, you look at everything that beholds you. To the east (E) you can smell some ramen and hear a Smithie bitterly complaining about the food at Smith and further east the thudding of washing machines. \n To the west (W) you can see and lounging area and Smithies Studying. \n North (N) is the staircase that leds to your room.\n Where do you go?(Type N,E,or W) \n");
+              userHouse.methodCaller();
+              System.out.println("You rush over to Fordhall, making just in time at 9:19... \n only to realize you came here for your Tuesday/Thursday CS class and TODAY IS MONDAY!! 'How silly, and goofy of me' you think to yourself. 'Whelp, since I'm here already and I only have Theatre class today, might as well look around :D'\n North of you, there's a balcony with someone up there! \n  East of you there seems to be a Smithie coding by themselves! \n  To the West, there's a Smithie hanging up a poster (N/E/W)");
+              userFordhall.methodCaller();
 
-        // Tidy up
-      //  userInput.close();
+
+       
 
         // Once you exit the loop, you may need to deal with various possible stopping conditions
         if (userResponse.equals("WIN")) {
