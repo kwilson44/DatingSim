@@ -139,7 +139,17 @@ public class GameLoop {
               userFordhall.methodCaller();
 
 
-       
+              // Execute the beginning of the game by calling the House Intro, starting the player
+              // at the initial location of their House.
+              System.out.println(currentUser.name + " walks in to " + currentUser.userHouse + " 'Wowza!' You say in disbelief as you walk around and look at your potential home for the next 4 years. There's a wide array of Smithies buzzing and getting ready for classes. All of a sudden, a similar looking women appears: \n Hey, it's me, Sophia Smith again, I just wanted to tell you you can explore Smith's Campus by going N, E, S, W, there are limitations of course but you should look around, you could meet someone you fancy. You can also add things you find to your inventory by typing 'add' and the object you want. Also, you can impress your crush by talking with them or giving gifts you find. One last thing, while you can have multiple crushes, choosing one main one might make winning them over easier. One last thing, there is an element of time in this too. Choose your location wisely. Okay, good luck kid :D \n");
+
+              
+
+              System.out.println("With that, it's time for adventure... and love??? A bit overwhemled, you look at everything that beholds you. To the east (E) you can smell some ramen and hear a Smithie bitterly complaining about the food at Smith and further east the thudding of washing machines. To the west (W) you can see and lounging area and Smithies Studying. South (S) of you is the exit and North (N) is the staircase that leds to your room. Where do you go?(Type N,E,S,or W) \n");
+            userHouse.methodCaller();
+
+        // Tidy up
+      //  userInput.close();
 
         // Once you exit the loop, you may need to deal with various possible stopping conditions
         if (userResponse.equals("WIN")) {
@@ -150,6 +160,5 @@ public class GameLoop {
     }       
 
     }
-
 
 

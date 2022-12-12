@@ -109,18 +109,18 @@ public class Fordhall extends PlayerIntro {
         
         Scanner myObj = new Scanner(System.in);
         House player = new House();
-        String directionInputOne = myObj.nextLine();
+        String directionInputOneFH = myObj.nextLine();
         String directionInputTwo = "";
 
 
-        switch (directionInputOne) {
+        switch (directionInputOneFH) {
             case "N":
             player.northOne();
             directionInputTwo = myObj.nextLine();
-            if (directionInputOne.equals("N") && directionInputTwo.equals("N")) {
+            if (directionInputOneFH.equals("N") && directionInputTwo.equals("N")) {
                 player.northTwo();
 
-            } else if (directionInputOne.equals("N") && directionInputTwo.equals("S")){
+            } else if (directionInputOneFH.equals("N") && directionInputTwo.equals("S")){
                 player.startingPoint();
                 }
             break;
@@ -129,10 +129,10 @@ public class Fordhall extends PlayerIntro {
         case "E":
             player.eastOne();
             directionInputTwo = myObj.nextLine();
-            if (directionInputOne.equals("E") && directionInputTwo.equals("E")) {
+            if (directionInputOneFH.equals("E") && directionInputTwo.equals("E")) {
                 player.eastTwo();
 
-            } else if (directionInputOne.equals("E") && directionInputTwo.equals("S")){
+            } else if (directionInputOneFH.equals("E") && directionInputTwo.equals("S")){
                 player.startingPoint();
                 }
             break;
@@ -142,10 +142,10 @@ public class Fordhall extends PlayerIntro {
         case "W":
         player.westOne();
         directionInputTwo = myObj.nextLine();
-        if (directionInputOne.equals("W") && directionInputTwo.equals("W")) {
+        if (directionInputOneFH.equals("W") && directionInputTwo.equals("W")) {
             player.westTwo();
 
-        } else if (directionInputOne.equals("W") && directionInputTwo.equals("S")){
+        } else if (directionInputOneFH.equals("W") && directionInputTwo.equals("S")){
             player.startingPoint();
             }
         break;
@@ -154,10 +154,10 @@ public class Fordhall extends PlayerIntro {
                 System.out.println("Confused, and maybe unable to follow instructions, you stumble to your dorm *** -5 POINTS *** \n");
                 player.northOne();
             directionInputTwo = myObj.nextLine();
-            if (directionInputOne.equals("N") && directionInputTwo.equals("N")) {
+            if (directionInputOneFH.equals("N") && directionInputTwo.equals("N")) {
                 player.northTwo();
 
-            } else if (directionInputOne.equals("N") && directionInputTwo.equals("S")){
+            } else if (directionInputOneFH.equals("N") && directionInputTwo.equals("S")){
                 player.startingPoint();
                 }
         break;
@@ -174,7 +174,7 @@ public class Fordhall extends PlayerIntro {
             break;
 
             case "N":
-            if (directionInputOne.equals("N") == false) {
+            if (directionInputOneFH.equals("N") == false) {
                 player.northOne();
             } else {
                 System.out.println("OwO! It looks like your senpai left... it's oftenly drafty here, we should go back to the lobby. \n");
@@ -186,7 +186,7 @@ public class Fordhall extends PlayerIntro {
 
 
         case "E":
-            if (directionInputOne.equals("E") == false) {
+            if (directionInputOneFH.equals("E") == false) {
                 player.eastOne();
             } else {
                 System.out.println("Well, that happened. You should probably let them code now :D \n");
@@ -197,7 +197,7 @@ public class Fordhall extends PlayerIntro {
             }
 
         case "W":
-            if (directionInputOne.equals("W") == false) {
+            if (directionInputOneFH.equals("W") == false) {
                 player.westOne();
             } else {
                 System.out.println("Well, there's not much to do now \n");
