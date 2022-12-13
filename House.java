@@ -103,7 +103,7 @@ public class House extends PlayerIntro {
             System.out.println("Quirked up you goated with the sause busts it down platonic style and impress them with your sweet moves! *** +15 POINTS *** \n");
             points += 15;
         } else if (eastActionInput.equals("I")) {
-            System.out.println("You say 'Hi, my name is -INSERT NAME-' and I live in room 302. It's nice to meet you'. That was kind of basic but they seem to like you. *** +5 POINTS *** \n");
+            System.out.println("You say 'Hi, I just moved in, I live in room 302. It's nice to meet you'. That was kind of basic but they seem to like you. *** +5 POINTS *** \n");
             points += 5;
         } else if (eastActionInput.equals("M")) {
             System.out.println("You start trash talking your rivial house that's basically a clone of your house and gain their respect. Nothing builds camaraderie more than a common enemy. *** +10 POINTS *** \n");
@@ -137,7 +137,7 @@ public class House extends PlayerIntro {
         System.out.println("You go further east and end up in the laundry room. There isn't much to see besides washing machines going and a free bin. 'hmmmm' you wonder to yourself 'there's not much to do' Do you wanna look around? (Y/N)  \n");
         String eastActionInputThree = myObj.nextLine();
         if (eastActionInputThree.equals("Y")) {
-            System.out.println("Cool! You see a picture of \n *** Mendenhall *** \n *** Ford Hall *** \n *** The Nielson *** \n It's always good to be curious and look at your surroundings *** +5 POINTS *** \n Let's go back now");
+            System.out.println("Cool! You see a picture of \n *** Mendenhall *** \n *** Ford Hall *** \n It's always good to be curious and look at your surroundings *** +5 POINTS *** \n Let's go back now");
         } else {
             System.out.println("Alright, let's go back.\n");
 
@@ -297,6 +297,8 @@ public class House extends PlayerIntro {
  
 
         }
+
+    
     }
 
 
