@@ -8,7 +8,7 @@ public class Mendenhall extends PlayerIntro {
     boolean active = false;
     String direction;
     int position;
-    boolean WinOrLose;
+    boolean winOrLose;
 
 
 //PLACEHOLDER
@@ -18,19 +18,18 @@ public class Mendenhall extends PlayerIntro {
 
 //north kinda
     public void finalBoss() {
-      System.out.println("You enter Mendenhall's basement feeling pretty werid... all of a sudden, a MINOTAUR emerges from the shadows...\n Oh wait, oh god, it's even worse *vomits* its theatre kids!!! "+
-      "In one giant, elaborate costume five theatre kids (one of which looks kind of familiar) create a MINOTAUR!! And oh no! They're bullying your crush (the one from Ford). YOU MUST DEFEAT THEM. Pick your wits or the things around you: \n ** Hurt their ego (type 'E')** \n ** Sword!! (type 'S')** \n ** Reference The Little Mermaid the musical??? (type M)**");
+      System.out.println("You enter Mendenhall's basement feeling pretty werid... all of a sudden, a MINOTAUR emerges from the shadows...\n And oh no! They're bullying your crush (the one from Ford). YOU MUST DEFEAT THEM. Pick your wits or the things around you: \n ** Hurt their ego (type 'E')** \n ** Sword!! (type 'S')** \n ** Reference The Little Mermaid the musical??? (type M)**");
       
       String finalBossInput = myObj.nextLine();
 
       if (finalBossInput.equals("E")) {
-          System.out.println(" 'Eh Minotaur!', You shout at the top of your lungs, 'You look stupid'. Simple, but effective! Now they're in their heads and they can't commit. *** +10 POINTS *** \n");
+          System.out.println(" 'Eh Minotaur!', You shout at the top of your lungs, 'You look stupid'. Simple, but effective! Now they feel bad. *** +10 POINTS *** \n");
           points += 10;
       } else if (finalBossInput.equals("S")) {
           System.out.println("You grab a prop sword you see on the ground and charge at them! But it's a prop so it snaps in 1/2 on impact ://// Also violence is never the answer *** -5 POINTS *** \n");
           points -= 5;
       } else if (finalBossInput.equals("M")) {
-          System.out.println(" For some inexplicable reason, every theatre kid did The Little Mermaid the musical. You You referencing it has distracted them! :D  *** +15 POINTS *** \n");
+          System.out.println(" For some inexplicable reason, you reference The Little Mermaid the musical. You referencing it has distracted them for some reason! :D  *** +15 POINTS *** \n");
           points += 15;
       } else {
           System.out.println("OH NO! You don't say anything and now your crush is in danger... or catching feelings for the Minotaur??? *** -10 POINTS *** \n");
@@ -59,26 +58,25 @@ public class Mendenhall extends PlayerIntro {
 
       
     }
-//north kind of
-    public void Ending() {
-      System.out.println("\n YOU... ~Calculating Points~ \n");
-
-      int EndingRandomizer = (int)(Math.random() * (2 - 1 + 1) + 1);
-
-      
-      if (EndingRandomizer % 2 == 1) {
-        // win message// win crush / defeat minotaur
-        System.out.println("You win!");
-        WinOrLose = true;
-    } else {
-      //lose message/ lost crush and minotaur
-      System.out.println("You lose!");
-
-        WinOrLose = false;
-    }
-      
-
-    }
+public void Ending() {
+  int fightSuccess = (int)(Math.random() * (2 - 1 + 1) + 1);
+  if (fightSuccess % 2 == 1) {
+    System.out.println("What's this?? A bright light flares all around the Minotaur, and a high pitched ringing fills your ears. The monster suddenly collapses to the floor in a heap of grey and brown, falling apart to reveal...3 smithies stacked on top of each other? Well, you won the fight! CONGRATS \n");
+    winOrLose = true;
+    points += 10;
+} else {
+    System.out.println("Panting, you step back, completely exhausted from your efforts. The Minotaur begins laughing now, its deep rumble like the sound of 2 to 3 college students laughing under their breaths from beneath a costume. Uh oh. It looks like this fight is over. \n");
+    winOrLose = false;
+    points -= 10;
+}
+if (winOrLose == true) {
+    System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush steps towards you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handle all that if you weren't around'. Nice! You kept them safe from the theater kid antics!! \n" +
+    "'You're a pretty cool person, PLAYERNAME. We should get coffee together sometime :)' YAYY!! Looks like this could be the start of something special...or at least a nice healthy friendship!");
+}
+if (winOrLose == false) {
+    System.out.println("Your crush becomes overwhelmed and darts up towards the stairs from behind the Minotaur, disappearing from sight. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time... GAME OVER! \n");
+}
+  //50/50 chance of success
 
 
     public static void main(String[] args) {
