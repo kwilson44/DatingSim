@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.lang.Math;
-import java.util.Arrays;
 import java.util.ArrayList;
 
   //to run the code type javac PlayerIntro.java, ls,  java PlayerIntro
@@ -103,7 +102,7 @@ public class PlayerIntro {
 
         }
       
-
+        myObj.close();
   }
   
     public static void main(final String[] args) {

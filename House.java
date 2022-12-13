@@ -1,7 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.*;
-
 
 public class House extends PlayerIntro {
     int points = 0;
@@ -294,7 +292,7 @@ public class House extends PlayerIntro {
     }
 
  
-
+        myObj.close();
         }
 
     

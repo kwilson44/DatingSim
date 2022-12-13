@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.*;
 
 
 public class Fordhall extends PlayerIntro {
@@ -273,7 +272,8 @@ public class Fordhall extends PlayerIntro {
     }
 
  
-
+          myObj.close();
         }
+
     }
 

@@ -145,6 +145,9 @@ public class GameLoop {
               System.out.println("********************************");
               System.out.println("SMITH COLLEGE DATING SIMULATOR");
               System.out.println("********************************");
+
+              myObj.close();
+              userInput.close(); //we should pick one scanner
     }       
 
     }

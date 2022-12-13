@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.io.*;
 
 
 public class Mendenhall extends PlayerIntro {
@@ -71,7 +70,7 @@ public void Ending() {
     points -= 10;
 }
 if (winOrLose == true) {
-    System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush reappears and runs up to you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handle all that if you weren't around'. Nice! You kept them safe from the theater students' antics!! \n" +
+    System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush reappears and runs up to you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handled all that if you weren't around'. Nice! You kept them safe from the theater students' antics!! \n" +
     "'You're a pretty cool person, PLAYERNAME. We should get coffee together sometime :)' YAYY!! Looks like this could be the start of something special...or at least a nice healthy friendship!");
 }
 if (winOrLose == false) {
@@ -171,6 +170,7 @@ if (winOrLose == false) {
  
 
         }
+        myObj.close();
       }
     }
 
