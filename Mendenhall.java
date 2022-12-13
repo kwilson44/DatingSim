@@ -60,9 +60,18 @@ public class Mendenhall extends PlayerIntro {
     }
 //north kind of
     public void Ending() {
-      System.out.println("\n Well, that was fun! Better get to your actual class in Mendenhall \n");
-      //50/50 chance of success
+      System.out.println("\n YOU.. ~Calculating Points~ \n");
 
+      int EndingRandomizer = (int)(Math.random() * (2 - 1 + 1) + 1);
+
+      if (EndingRandomizer % 2 == 1) {
+        // win message// win crush / defeat minotaur
+        WinOrLose = true;
+    } else {
+      //lose message/ lost crush and minotaur
+        WinOrLose = false;
+    }
+      
 
     }
 
