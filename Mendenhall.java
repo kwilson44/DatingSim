@@ -59,25 +59,25 @@ public class Mendenhall extends PlayerIntro {
       
     }
 public void Ending() {
+    //50/50 chance of success
   int fightSuccess = (int)(Math.random() * (2 - 1 + 1) + 1);
   if (fightSuccess % 2 == 1) {
-    System.out.println("What's this?? A bright light flares all around the Minotaur, and a high pitched ringing fills your ears. The monster suddenly collapses to the floor in a heap of grey and brown, falling apart to reveal...3 smithies stacked on top of each other? Well, you won the fight! CONGRATS \n");
+    System.out.println("As the minotaur lurches forward, its legs begin to wobble, and you see its midsection start to shake back and forth as its head sways wildly. The monster suddenly collapses to the floor in a heap of grey and brown, falling apart to reveal...3 smithies stacked on top of each other? Well, you won the fight! CONGRATS \n");
     winOrLose = true;
     points += 10;
 } else {
-    System.out.println("Panting, you step back, completely exhausted from your efforts. The Minotaur begins laughing now, its deep rumble like the sound of 2 to 3 college students laughing under their breaths from beneath a costume. Uh oh. It looks like this fight is over. \n");
+    System.out.println("The minotaur lands its stride and lunges right towards you, arcing a long cardboard tube down onto your head. Ow, that hurt and made you feel pretty stupid and silly. \n Panting, you step back, completely exhausted from your efforts. The Minotaur begins laughing now, its deep rumble like the sound of 2 to 3 college students laughing under their breaths from beneath a costume. Uh oh. It looks like this fight is over. \n");
     winOrLose = false;
     points -= 10;
 }
 if (winOrLose == true) {
-    System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush steps towards you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handle all that if you weren't around'. Nice! You kept them safe from the theater kid antics!! \n" +
+    System.out.println("As the 'Minotaur' scrapes themsel(ves?) together and trudges away down the hall towards the costume shop, your Crush reappears and runs up to you, looking a bit flustered. They give you a grin and begin laughing, seeming to share in your incredulity at the situation. \n 'Hey, thanks for helping me out back there. I'm not sure how I'd have handle all that if you weren't around'. Nice! You kept them safe from the theater students' antics!! \n" +
     "'You're a pretty cool person, PLAYERNAME. We should get coffee together sometime :)' YAYY!! Looks like this could be the start of something special...or at least a nice healthy friendship!");
 }
 if (winOrLose == false) {
-    System.out.println("Your crush becomes overwhelmed and darts up towards the stairs from behind the Minotaur, disappearing from sight. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time... GAME OVER! \n");
+    System.out.println("You hunch over, trembling, nerves frayed with the hope that your crush will come back for you, but they're now nowhere to be seen. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time... GAME OVER! \n");
 }
 }
-  //50/50 chance of success
 
 
     public static void main(String[] args) {
