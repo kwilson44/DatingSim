@@ -76,6 +76,7 @@ if (winOrLose == true) {
 if (winOrLose == false) {
     System.out.println("Your crush becomes overwhelmed and darts up towards the stairs from behind the Minotaur, disappearing from sight. You stand frozen and left behind as the Minotaur points at laughs at you for being such a complete and utter loser. Better luck next time... GAME OVER! \n");
 }
+}
   //50/50 chance of success
 
 
