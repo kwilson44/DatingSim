@@ -53,22 +53,27 @@ public class Mendenhall extends PlayerIntro {
               System.out.println("You flirt with the Minotaur, who was confused at first but is now cool with it, giving your crush time to escape. But what about you? *** +5 POINTS *** \n");
               points += 5;
           } else {
-              System.out.println("The minotaur jumps at you and-- to see the final results, write 'C' for continue: \n");
+              System.out.println("You don't do ANYTHING AND FAIL \n");
           }
+          System.out.println("The minotaur jumps at you and-- to see the final results, write 'C' for continue: \n");
 
       
     }
 //north kind of
     public void Ending() {
-      System.out.println("\n YOU.. ~Calculating Points~ \n");
+      System.out.println("\n YOU... ~Calculating Points~ \n");
 
       int EndingRandomizer = (int)(Math.random() * (2 - 1 + 1) + 1);
 
+      
       if (EndingRandomizer % 2 == 1) {
         // win message// win crush / defeat minotaur
+        System.out.println("You win!");
         WinOrLose = true;
     } else {
       //lose message/ lost crush and minotaur
+      System.out.println("You lose!");
+
         WinOrLose = false;
     }
       
@@ -105,7 +110,7 @@ public class Mendenhall extends PlayerIntro {
             System.out.println("On the roof top, you are amazed by the beauty of Smith College. Yet, something is still compelling you to do to the basement.");
             player.finalBoss();
             directionInputTwoMH = myObj.nextLine();
-            if (directionInputOneMH.equals("S") && directionInputTwoMH.equals("C")) {
+            if (directionInputTwoMH.equals("C")) {
               player.Ending();
             }
 
@@ -115,7 +120,7 @@ public class Mendenhall extends PlayerIntro {
             System.out.println("To the east, you end up in Acting Studio 2 but, something isn't right. You feel an urge to check out the basement");
             player.finalBoss();
             directionInputTwoMH = myObj.nextLine();
-              if (directionInputOneMH.equals("S") && directionInputTwoMH.equals("C")) {
+              if (directionInputTwoMH.equals("C")) {
               player.Ending();
             }           
              break;
@@ -125,7 +130,7 @@ public class Mendenhall extends PlayerIntro {
             System.out.println("To the west, you end of in Hallie Flanagan Studio Theatre. Despite no one being here, you hear whispers telling you to go to the basement.");
             player.finalBoss();
             directionInputTwoMH = myObj.nextLine();
-            if (directionInputOneMH.equals("S") && directionInputTwoMH.equals("C")) {
+            if (directionInputTwoMH.equals("C")) {
               player.Ending();
             }
             break;

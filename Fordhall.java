@@ -85,9 +85,9 @@ public class Fordhall extends PlayerIntro {
 
     public void eastOne() {
 // Smithie coding
-    String eastActionInput = myObj.nextLine();
 
     System.out.println("You approach the lounge area by the entrance of Ford, noticing that several students have set up camp on the sofas. \n There is a lone Smithie sitting by the window, staring at their computer with a thousand-yard stare. As an empath, you get the sense that they may be stressed. \n'I am so stressed.', they say. 'My CS homework is due in 5 minutes, but I forgot how to write javadoc comments!! What should I do? \n ** Helpful Answer (type 'H') \n ** Pair programming? (type 'P') \n ** Unsolicited Pep Talk ('U')");
+    String eastActionInput = myObj.nextLine();
     if (eastActionInput.equals("H")) {
         System.out.println("You puff out ur chest and smile cooly. Finally, you know something useful! 'Here, I have a template to help with that,' you say, lifting your arm up to show them the notes written on your wrist. A little weird, but okay- they seem too desperate to care anyways! *** +10 POINTS *** ");
         points += 10;
@@ -101,10 +101,11 @@ public class Fordhall extends PlayerIntro {
         System.out.println("YIKES, you were too slow to react and are now staring at them silently. The slight smile on your face is enough to scare them off completely. *** -15 POINTS *** \n");
         points -= 15;
     }
+    System.out.println("Well, that happened. Wanna go further east or back where you started? (E/S)");
     }
 
     public void eastTwo() {
-       
+        System.out.println("Oops there's not a lot to see lol");
     }
 
 
@@ -213,7 +214,7 @@ public class Fordhall extends PlayerIntro {
         break;
 
         default:
-                System.out.println("Confused, and maybe unable to follow instructions, you stumble to your dorm *** -5 POINTS *** \n");
+                System.out.println("Confused, and maybe unable to follow instructions, you stumble to the balcony *** -5 POINTS *** \n");
                 player.northOne();
                 directionInputTwoFH = myObj.nextLine();
             if (directionInputOneFH.equals("N") && directionInputTwoFH.equals("N")) {

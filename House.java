@@ -25,7 +25,6 @@ public class House extends PlayerIntro {
     public void northOne() {
         points += 1;
         active = true;
-        // potentialDirections.add("N1");
 
         System.out.println("You walk upstairs and head into your dorm. There to meet you is your roommate(There's a 50/50 chance things will go well).*** +1 POINT *** \n");
 

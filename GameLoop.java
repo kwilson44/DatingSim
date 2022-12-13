@@ -141,18 +141,10 @@ public class GameLoop {
               System.out.println("You enter Mendenhall, no one's here and the lights are flashing. \nThere's rumbling beneanth your feet that's coming from the basement that's down south. \n Where do you go? (N/E/S/W) ");
               userMendenhall.methodCaller();
 
-
-
-
-        // Tidy up
-      //  userInput.close();
-
-        // Once you exit the loop, you may need to deal with various possible stopping conditions
-        if (userResponse.equals("WIN")) {
-            System.out.println("Yay, you won!");
-        } else { 
-            System.out.println("GAME OVER. Better luck next time.");
-        }
+              System.out.println("    ~~THANKS FOR PLAYING~~");
+              System.out.println("********************************");
+              System.out.println("SMITH COLLEGE DATING SIMULATOR");
+              System.out.println("********************************");
     }       
 
     }
