@@ -7,12 +7,7 @@ public class House extends PlayerIntro {
     String direction;
     int position;
     boolean roommateFriendship;
-    // ArrayList<String> potentialDirections = new ArrayList<String>();
 
-
-
-    //note for future katie, add N1 or E2 whenever a method is called and if it is do contains and then
-    //print a message telling the player they've already done this
 
     ArrayList<String> inventory = new ArrayList<String>();
 
@@ -292,10 +287,9 @@ public class House extends PlayerIntro {
     }
 
  
-        myObj.close();
         }
 
-    
+
     }
 
 

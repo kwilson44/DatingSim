@@ -10,7 +10,6 @@ public class Fordhall extends PlayerIntro {
     boolean funQuestion;
 
 
-//PLACEHOLDER
     ArrayList<String> inventory = new ArrayList<String>();
 
     Scanner myObj = new Scanner(System.in);
@@ -104,7 +103,7 @@ public class Fordhall extends PlayerIntro {
     }
 
     public void eastTwo() {
-        System.out.println("Oops there's not a lot to see lol");
+        System.out.println("Oops there's not a lot to see lol.");
     }
 
 
@@ -272,7 +271,6 @@ public class Fordhall extends PlayerIntro {
     }
 
  
-          myObj.close();
         }
 
     }
