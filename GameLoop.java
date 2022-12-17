@@ -3,42 +3,18 @@ import java.util.ArrayList;
 //import House.java;
 
 public class GameLoop {
-    ArrayList<String> inventory = new ArrayList<String>();     
-    int gamePoints = 0;
   
     public static void main(String[] args) {
-
-// from house.java
- //ArrayList<String> potentialDirections = new ArrayList<String>();
+;
     Scanner myObj = new Scanner(System.in);
-        //first n,e,s,w choice
-        
-        String directionInputOne = "";
-        String directionInputTwo = "";
-        //String directionInputThree = "";
-        String startingPointInput = "";
-        //Clarify with gamePoints
+    String playerHouse ="";         
+   ArrayList<String> inventory = new ArrayList<String>();
 
 
+    System.out.println("**************************************");
+    System.out.println("*💖 SMITH COLLEGE DATING SIMULATOR 💖*");
+    System.out.println("**************************************");
 
-
-        // This is a "flag" to let us know when the loop should end
-        boolean stillPlaying = true;
-        String playerHouse ="";
-        // We'll use this to get input from the user.
-        Scanner userInput = new Scanner(System.in);
-
-        // Storage for user's responses
-        String userResponse = "";
-
-        // This could be replaced with a more interesting opening
-        System.out.println("********************************");
-        System.out.println("SMITH COLLEGE DATING SIMULATOR");
-        System.out.println("********************************");
-
-        // The do...while structure means we execute the body of the loop once before checking the stopping condition
-       // do { //COME BACK AND ADD DO WHILE KATIE AND ERIN KRIN
-            // ************************************************
             // The stuff that happens in your game will go here
             //  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓
 
@@ -122,9 +98,8 @@ public class GameLoop {
         userInputClassYear = myObj.nextInt();
         }
 
-        
+            Player currentUser = new Player(InputName, userInputClassYear, playerHouse,inventory);
 
-            Player currentUser = new Player(InputName, userInputClassYear, playerHouse);
             House userHouse = new House();
             Fordhall userFordhall = new Fordhall();
             Mendenhall userMendenhall = new Mendenhall();
@@ -143,8 +118,9 @@ public class GameLoop {
 
               System.out.println("    ~~THANKS FOR PLAYING~~");
               System.out.println("********************************");
-              System.out.println("SMITH COLLEGE DATING SIMULATOR");
+              System.out.println("💖SMITH COLLEGE DATING SIMULATOR💖");
               System.out.println("********************************");
+              myObj.close();
 
     }       
 

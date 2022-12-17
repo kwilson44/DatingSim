@@ -1,6 +1,5 @@
 //I just copyed and pasted the building class cus Jordan said we could
 //thanks Jordan :)
-import javax.management.RuntimeErrorException;
 
 public class Building {
 

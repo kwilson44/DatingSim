@@ -15,9 +15,9 @@ public class House extends PlayerIntro {
 
 
 
+
     public void northOne() {
         points += 1;
-        active = true;
 
         System.out.println("You walk upstairs and head into your dorm. There to meet you is your roommate(There's a 50/50 chance things will go well).*** +1 POINT *** \n");
 
@@ -35,25 +35,37 @@ public class House extends PlayerIntro {
 
         if (roommateFriendship == true) {
             System.out.println("Hey! It's nice to finally meet you in person. I'm Jess, but everyone calls me Jelly.  *Jelly goes back to unpacking* :D \n");
+            System.out.println("You notice a -Smith Cookie- on your roommate's desk. You kind of want it. 'Hey roomie' you say, half smiling, 'Can I have that cookie?'\n ");
+            System.out.println("'Sure! I wasn't even going to eat it anyway'\n Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
+            points += 5;
+
+            System.out.println("Eh... They kind of cute??? What do you do?? \n **Shoot your shot?(type 'S')** \n **Terrible Idea (type 'T')** \n ** Squawk like a bird (type B)** \n ");
+
+            String northActionInput = myObj.nextLine();
+
+            if (northActionInput.equals("S")) {
+                System.out.println("No, I'm going to stop you. This is a horrible idea!! *** -15 POINTS ***\n");
+                points -= 15;
+            } else if (northActionInput.equals("T")) {
+                System.out.println("Good instincts kid! *** +10 POINTS *** \n");
+                points += 10;
+            } else if (northActionInput.equals("B")) {
+                System.out.println("You confused them with your bird noises but it could have gone worse. *** +5 POINTS *** \n");
+                points += 5;
+            } else {
+                System.out.println("There were worse options... *** -5 POINTS *** \n");
+                points -= 5;
+    
+            }
+
         }
 
 
         if (roommateFriendship == false) {
             System.out.println(" 'Oh, hi. I guess you want to be in my room... that's cool I guess, I'm Jess' *Jess starts smoking weed (and doesn't even offer to share!) :( * \n");
-
-        }
-
-        System.out.println("You notice a -Smith Cookie- on your roommate's desk. You kind of want it. 'Hey roomie' you say, half smiling, 'Can I have that cookie?'\n ");
-
-        if (roommateFriendship == true) {
-            System.out.println("'Sure! I wasn't even going to eat it anyway'\n Cool! Now it's in your nice Conaway Center Tote Bag. *** +5 POINTS *** \n");
-
-            inventory.add("Smith Cookie");
-            points += 5;
-        }
-
-        if (roommateFriendship == false) {
+            System.out.println("You notice a -Smith Cookie- on your roommate's desk. You kind of want it. 'Hey roomie' you say, half smiling, 'Can I have that cookie?'\n ");
             System.out.println("'HELL NO, its for Mr.Twinkles' *Jess proceeds to feed the cookie to her unregistered, feral, emotional support rat that lives on your dresser* \n");
+
 
         }
 
@@ -64,7 +76,6 @@ public class House extends PlayerIntro {
 
         points += 1;
         active = true;
-        //potentialDirections.add("N2");
 
         System.out.println("*** +1 POINT *** You walk further into your dorm and start unpacking. On your desk you see an old photo of Smithies from the 1800s doing a play. One Smithie is dressed in a gown and another is as a monster. That's werid... Should you take it? (Y/N) \n");
         String deskYN = myObj.nextLine();
@@ -240,8 +251,6 @@ public class House extends PlayerIntro {
         break;
         }
 
-
-
    
         switch (directionInputTwo) {
 
@@ -286,10 +295,11 @@ public class House extends PlayerIntro {
         break;
     }
 
+
  
         }
 
 
-    }
 
 
+}

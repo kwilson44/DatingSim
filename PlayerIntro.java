@@ -102,7 +102,7 @@ public class PlayerIntro {
 
         }
       
-        myObj.close();
+       // myObj.close();
   }
   
     public static void main(final String[] args) {

@@ -170,7 +170,6 @@ if (winOrLose == false) {
  
 
         }
-        myObj.close();
       }
     }
 

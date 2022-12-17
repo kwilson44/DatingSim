@@ -235,31 +235,29 @@ public class Fordhall extends PlayerIntro {
             break;
 
             case "N":
-            if (directionInputOneFH.equals("N") == false) {
-                player.northOne();
+            if (directionInputOneFH.equals("N") == true) {
+               // player.northTwo();
             } else {
                 System.out.println("OwO! It looks like your senpai left... it's oftenly drafty here, we should go back to the lobby. \n");
                 player.startingPoint();
 
-            
+                 }
                 break;
-            }
 
 
         case "E":
-            if (directionInputOneFH.equals("E") == false) {
-                player.eastOne();
+            if (directionInputOneFH.equals("E") == true) {
+             //   player.eastTwo();
             } else {
                 System.out.println("Well, that happened. You should probably let them code now :D \n");
                 player.startingPoint();
-
-            
-                break;
             }
+            break;
+
 
         case "W":
-            if (directionInputOneFH.equals("W") == false) {
-                player.westOne();
+            if (directionInputOneFH.equals("W") == true) {
+              //  player.westTwo();
             } else {
                 System.out.println("And just like that, Bike left and there's not much to do now. \n");
                 player.startingPoint();
